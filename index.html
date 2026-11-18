@@ -37,8 +37,8 @@
 <main id="main" class="wrap">
 <section class="hero" aria-labelledby="hero-title">
   <div>
-    <p class="eyebrow">For kids ages <span class="age-range">7–12</span> and their grown-ups</p>
-    <h1 id="hero-title">Money and Business Basics for Kids Ages <span class="age-range">7–12</span></h1>
+    <p class="eyebrow">For kids ages <span class="age-range">7–12</span> and their <span class="nowrap">grown-ups</span></p>
+    <h1 id="hero-title">Money and Business Basics for Kids Ages&nbsp;<span class="age-range">7–12</span></h1>
     <p class="tagline">One idea. Five minutes.</p>
     <p class="intro">From lemonade stands to selling drawings, explore money and business through simple examples you can talk about together.</p>
     <div class="buttons">
@@ -89,40 +89,6 @@
   <a class="button" href="/lessons/">Browse the lessons</a>
 </section>
 
-<!-- EMAIL_FORM_SLOT: replace this disabled form with the connected provider embed when ready. See email-capture/CONNECT_INSTRUCTIONS.md. -->
-<section class="updates" aria-labelledby="updates-title">
-  <h2 id="updates-title">Join our parent updates</h2>
-  <p class="pitch">Short notes for parents and caregivers when new lessons are ready. No spam.</p>
-  <form class="updates-form" id="updates-form" action="#" method="post" aria-disabled="true" novalidate>
-    <div class="field field-name">
-      <label for="parent-name">First name <span class="optional">(optional)</span></label>
-      <input
-        id="parent-name"
-        name="first_name"
-        type="text"
-        autocomplete="given-name"
-        maxlength="80"
-        disabled>
-    </div>
-    <div class="field">
-      <label for="parent-email">Email address</label>
-      <input
-        id="parent-email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        inputmode="email"
-        placeholder="you@example.com"
-        disabled
-        aria-describedby="updates-note updates-consent">
-    </div>
-    <button class="button quiet" type="submit" disabled>Get updates</button>
-  </form>
-  <p class="note" id="updates-note">Signup is not connected yet, so this form cannot send or save your email. The parent guide PDF downloads freely with no email required.</p>
-  <p class="note consent" id="updates-consent">For parents and caregivers 18+ only. Please do not enter a child’s email address.</p>
-  <p class="status" id="updates-status" role="status" aria-live="polite" hidden>Thanks — please check your inbox to confirm. We’ll only send Kids Business Basics updates.</p>
-</section>
-
 <section class="approach" aria-labelledby="our-approach">
   <h2 id="our-approach">Our approach</h2>
   <p>Kids Business Basics helps children ages <span class="age-range">7–12</span> explore money and business through everyday examples and thoughtful practice. Our aim is curiosity, confidence and judgment for future informed choices—not pressure to earn, spend or invest. Families learn together, one idea at a time.</p>
@@ -141,16 +107,8 @@
 <footer><div class="wrap">
   <p class="footer-brand">Kids Business Basics · One idea. Five minutes.</p>
   <p class="notice">Kids Business Basics provides educational content, not personalized financial, investment, tax or legal advice. Examples are simplified and no earnings, financial or learning outcomes are guaranteed. Please supervise children during real purchases, selling and any sharing of personal information.</p>
-  <p>This page has no advertising or analytics scripts. The YouTube link opens an external service. The updates form is not connected yet and cannot send or save email.</p>
+  <p>This page has no advertising or analytics scripts. The YouTube link opens an external service.</p>
+  <p><a href="/privacy/">Privacy note</a></p>
 </div></footer>
-<script>
-(function () {
-  var form = document.getElementById('updates-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-  });
-})();
-</script>
 </body>
 </html>
