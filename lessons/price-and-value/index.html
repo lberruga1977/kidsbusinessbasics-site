@@ -106,10 +106,45 @@
 <footer><div class="wrap">
   <p class="footer-brand">Kids Business Basics · One idea. Five minutes.</p>
   <p class="notice">Kids Business Basics provides educational content, not personalized financial, investment, tax or legal advice. Examples are simplified and no earnings, financial or learning outcomes are guaranteed. Please supervise children during real purchases, selling and any sharing of personal information.</p>
-  <p>This site adds no advertising or analytics scripts of its own. The lesson image is stored on this site. If you choose to play the lesson, the video loads in YouTube's privacy-enhanced player, an external service with its own privacy policy.</p>
+  <p>This page has no advertising scripts or cookies. A cookieless visitor counter (GoatCounter) counts page visits; see the <a href="/privacy/">Privacy note</a>. The lesson image is stored on this site. If you choose to play the lesson, the video loads in YouTube's privacy-enhanced player, an external service with its own privacy policy.</p>
   <p><a href="/privacy/">Privacy note</a></p>
 </div></footer>
 <script src="/assets/lesson-player.js" defer></script>
 
+<script>
+  window.goatcounter = {
+    path: function(p) { return location.pathname },
+    referrer: function(r) {
+      if (!r) return r
+      try {
+        var u = new URL(r, location.href)
+        if (u.protocol !== 'http:' && u.protocol !== 'https:') return r
+        return u.origin + u.pathname
+      } catch (e) {
+        return String(r).split('?')[0].split('#')[0]
+      }
+    },
+    no_onload: true,
+    no_events: true
+  }
+</script>
+<script data-goatcounter="https://kidsbusinessbasics.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+  (function () {
+    var t = setInterval(function () {
+      if (!window.goatcounter || !window.goatcounter.get_data || !window.goatcounter.count) return
+      clearInterval(t)
+      var orig = window.goatcounter.get_data
+      window.goatcounter.get_data = function (vars) {
+        var data = orig.call(this, vars)
+        var m = /(?:^|[?&])utm_campaign=([^&]*)/i.exec(location.search || '')
+        data.q = m ? ('?utm_campaign=' + m[1]) : ''
+        return data
+      }
+      window.goatcounter.count()
+    }, 50)
+  })()
+</script>
 </body>
 </html>

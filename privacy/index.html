@@ -59,19 +59,55 @@
       <li><strong>What we send.</strong> Short money ideas for families, new lesson alerts, and occasional news about our resources, about one or two emails a week.</li>
       <li><strong>Who handles it.</strong> Our email service, MailerLite, stores and sends the emails for us. We don't sell or rent your address, and we don't share it with advertisers.</li>
       <li><strong>Tracking.</strong> Our email service records when a link in our emails is clicked, so we can see which ideas are useful. We've turned off open tracking. Our signup page for Facebook and Instagram ads uses the Meta Pixel only to tell Meta that a signup happened, so we can measure those ads. The pixel is never used on our lesson pages, our website or our YouTube channel.</li>
+      <li><strong>Visitor counts.</strong> Our website uses GoatCounter, a cookieless visitor counter, to count visits to each page and see general details such as browser type, screen size, referring site and country. Your IP address is used briefly in memory to count a visit once and is never stored. We use only these totals, to keep the site working and see which pages and printables are useful. We never use them for advertising, to build profiles, or to contact anyone, and GoatCounter doesn't sell or share them.</li>
       <li><strong>Unsubscribe any time.</strong> Every email has an unsubscribe link. You can also reply and ask us to delete your address, and we will.</li>
       <li><strong>The free parent guide stays free.</strong> You never need to sign up to download it.</li>
       <li><strong>A free printable when you sign up.</strong> After you confirm your email, we send a link to a free saving goal tracker hosted on our site. We use your address to deliver that printable and the short tips you asked for.</li>
       <li><strong>Contact:</strong> <a href="mailto:hello@kidsbusinessbasics.com">hello@kidsbusinessbasics.com</a></li>
     </ul>
-    <p class="meta updated">Last updated: November 25, 2026</p>
+    <p class="meta updated">Last updated: November 27, 2026</p>
   </article>
 </main>
 <footer><div class="wrap">
   <p class="footer-brand">Kids Business Basics · One idea. Five minutes.</p>
   <p class="notice">Kids Business Basics provides educational content, not personalized financial, investment, tax or legal advice. Examples are simplified and no earnings, financial or learning outcomes are guaranteed. Please supervise children during real purchases, selling and any sharing of personal information.</p>
-  <p>This page has no advertising or analytics scripts. The YouTube link opens an external service.</p>
+  <p>This page has no advertising scripts or cookies. A cookieless visitor counter (GoatCounter) counts page visits; see the <a href="/privacy/">Privacy note</a>. The YouTube link opens an external service.</p>
   <p><a href="/privacy/">Privacy note</a></p>
 </div></footer>
+<script>
+  window.goatcounter = {
+    path: function(p) { return location.pathname },
+    referrer: function(r) {
+      if (!r) return r
+      try {
+        var u = new URL(r, location.href)
+        if (u.protocol !== 'http:' && u.protocol !== 'https:') return r
+        return u.origin + u.pathname
+      } catch (e) {
+        return String(r).split('?')[0].split('#')[0]
+      }
+    },
+    no_onload: true,
+    no_events: true
+  }
+</script>
+<script data-goatcounter="https://kidsbusinessbasics.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+  (function () {
+    var t = setInterval(function () {
+      if (!window.goatcounter || !window.goatcounter.get_data || !window.goatcounter.count) return
+      clearInterval(t)
+      var orig = window.goatcounter.get_data
+      window.goatcounter.get_data = function (vars) {
+        var data = orig.call(this, vars)
+        var m = /(?:^|[?&])utm_campaign=([^&]*)/i.exec(location.search || '')
+        data.q = m ? ('?utm_campaign=' + m[1]) : ''
+        return data
+      }
+      window.goatcounter.count()
+    }, 50)
+  })()
+</script>
 </body>
 </html>
